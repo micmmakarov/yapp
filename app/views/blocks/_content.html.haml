@@ -1,0 +1,7 @@
+.block_list
+  %ul
+    -video.blocks.each do |b|
+      %li.video_link.video_block{'data-start' => b.start_time, 'data-end' => b.end_time}
+        =b.title
+        =b.start_time
+        =b.end_time

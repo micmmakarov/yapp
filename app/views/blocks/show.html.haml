@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Start time:
+  = @block.start_time
+%p
+  %b End time:
+  = @block.end_time
+%p
+  %b Video:
+  = @block.video_id
+%p
+  %b Answer start:
+  = @block.answer_start
+%p
+  %b Title:
+  = @block.title
+%p
+  %b Content:
+  = @block.content
+%p
+  %b Notes:
+  = @block.notes
+
+= link_to 'Edit', edit_block_path(@block)
+\|
+= link_to 'Back', blocks_path

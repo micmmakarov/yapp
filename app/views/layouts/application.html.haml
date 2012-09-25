@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Yapp
+    = stylesheet_link_tag    "application", :media => "all"
+    %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+    = javascript_include_tag "application"
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = csrf_meta_tags
+%body
+  .container.main-container
+    .row
+      = yield

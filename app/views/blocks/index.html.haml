@@ -1,0 +1,31 @@
+%h1 Listing blocks
+
+%table
+  %tr
+    %th Start time
+    %th End time
+    %th Video
+    %th Answer start
+    %th Title
+    %th Content
+    %th Notes
+    %th
+    %th
+    %th
+
+  - @blocks.each do |block|
+    %tr
+      %td= block.start_time
+      %td= block.end_time
+      %td= block.video_id
+      %td= block.answer_start
+      %td= block.title
+      %td= block.content
+      %td= block.notes
+      %td= link_to 'Show', block
+      %td= link_to 'Edit', edit_block_path(block)
+      %td= link_to 'Destroy', block, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Block', new_block_path

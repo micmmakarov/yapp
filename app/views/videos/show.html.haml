@@ -1,14 +1,23 @@
-%p#notice= notice
-
-%p
-  %b Youtube:
-  = @video.youtube
-%p
-  %b Title:
+#notice= notice
+%h2
   = @video.title
-%p
-  %b Interviewee:
-  = @video.interviewee_id
+.row
+  .seven.columns
+    .video
+      #video=@video.youtube
+  .five.columns
+    =render :partial => "blocks/add_block", :locals => {:video => @video}
+    =render :partial => "blocks/content", :locals => {:video => @video}
+
+.panel
+  .current_time
+    Current time
+  .duration
+    Duration
+
+
+
+
 
 = link_to 'Edit', edit_video_path(@video)
 \|

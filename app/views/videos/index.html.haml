@@ -1,23 +1,16 @@
 %h1 Listing videos
 
-%table
-  %tr
-    %th Youtube
-    %th Title
-    %th Interviewee
-    %th
-    %th
-    %th
 
-  - @videos.each do |video|
-    %tr
-      %td= video.youtube
-      %td= video.title
-      %td= video.interviewee_id
-      %td= link_to 'Show', video
-      %td= link_to 'Edit', edit_video_path(video)
-      %td= link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete
+- @videos.each do |video|
+  .panel
+    =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/default.jpg"), video
+    =link_to video.title, video
+    .info
+      Info:
+      = video.youtube
+    = link_to 'Show', video, :class => 'button'
+    = link_to 'Edit', edit_video_path(video)
+    = link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete
 
-%br
 
-= link_to 'New Video', new_video_path
+= link_to 'New Video', new_video_path, :class => 'button'
