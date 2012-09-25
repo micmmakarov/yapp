@@ -43,7 +43,7 @@ updatePlayerInfo = ->
       start = $(element).attr("data-start")
       end = $(element).attr("data-end")
       #alert start + " and " + end + "and " + current_time
-      if (current_time >= start) and (current_time <= end)
+      if (current_time > start) and (current_time <= end)
         $(element).addClass("active_block")
       else
         if $(element).hasClass("active_block")
