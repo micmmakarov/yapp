@@ -4,6 +4,8 @@ Yapp::Application.routes.draw do
 
   resources :videos
 
+  get "list" => "blocks#list"
+
   get "home/index"
 
   get "home/video"

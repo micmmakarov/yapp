@@ -7,7 +7,7 @@
       #video=@video.youtube
   .five.columns
     =render :partial => "blocks/add_block", :locals => {:video => @video}
-    =render :partial => "blocks/content", :locals => {:video => @video}
+    =render :partial => "blocks/content", :locals => {:blocks => @video.blocks}
 
 .panel
   .current_time
@@ -16,7 +16,7 @@
     Duration
 
 
-
+.block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
 
 
 = link_to 'Edit', edit_video_path(@video)

@@ -1,10 +1,9 @@
-%h1 Home#video
-%p Find me in app/views/home/video.html.erb
-#videoDiv
-
-
-%button.load_button
-  Load
-  Yoooooooo
-
-%input.video_id{:type => 'text'} qlEsPBy4K48
+#notice= notice
+%h2
+  = @video.title
+.row
+  .seven.columns
+    .video
+      #video=@video.youtube
+  .five.columns
+    Not yet

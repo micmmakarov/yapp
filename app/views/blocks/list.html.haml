@@ -1,0 +1,13 @@
+#notice= notice
+%h2.video_title
+  Title
+.row
+  .seven.columns
+    .video
+      #video ZOIXALf8FRY
+  .five.columns
+    =render :partial => "blocks/content", :locals => {:blocks => @blocks}
+
+
+:javascript
+  loadPlaylist(#{@blocks_json});
