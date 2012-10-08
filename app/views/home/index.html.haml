@@ -1,9 +1,16 @@
-.middle.top_padding
+.middle.top_padding.main-page
   .main-image-wrap
     .play
       =image_tag('play.png')
     =image_tag('img.jpg', :class => "main-image")
+    .sign
+      %h1.highlighted
+        Interview with a smart guy
+      %h3.white
+        This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video.
+
   .the_content
+    %hr
     .row
       .eight.columns
         %h1 Popular Interviews
@@ -12,13 +19,15 @@
             .four.columns
               .video-wrap
                 =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
-              =video.title
+              %h3=video.title
+        %hr
         %h1 Recommended Playlists
         .row
           -@playlists.each do |video|
             .four.columns
-              =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
-              =link_to video.title, video
+              .video-wrap
+                =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
+              %h3=video.title
 
       .two.columns
         %h1 Popular Questions
@@ -30,6 +39,7 @@
           %li Category5
       .two.columns
         %h1 Our Partners
+        =render "shared/partners"
 
 
 

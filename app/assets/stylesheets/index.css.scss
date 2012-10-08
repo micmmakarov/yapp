@@ -5,6 +5,13 @@
   margin-right:auto;
   display: block;
   position:relative;
+  .highlighted {
+    text-shadow: 0px 1px 10px rgba(0,0,0,1);
+  }
+  .white {
+    text-shadow: 0px 1px 10px rgba(0,0,0,1);
+  }
+
 }
 .main-image {
   width:100%;
@@ -14,6 +21,8 @@
   width:100%;
 }
 .video-wrap {
+  max-width:330px;
+  margin:auto;
   padding:5px;
   border:1px solid #e8e8e8;
 }
@@ -26,4 +35,17 @@
   position:absolute;
   left:50%;
   margin-left:-118px;
+}
+
+.sign {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  max-width: 450px;
+}
+
+.main-page {
+  .the_content .row:first-child {
+    //border-top: 1px dashed #c8c8c8;
+  }
 }

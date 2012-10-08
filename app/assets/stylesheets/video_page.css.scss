@@ -13,3 +13,17 @@
   }
 
 }
+
+
+.right_panel {
+  background: url(right_panel.png) repeat-y;
+  background-position: left top;
+  display:table-cell;
+  box-sizing: border-box;
+  vertical-align: top;
+  .the_content {
+    padding-left: 25px;
+    padding-right: 25px;
+    overflow:hidden;
+  }
+}

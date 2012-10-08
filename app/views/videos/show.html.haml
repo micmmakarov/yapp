@@ -8,7 +8,7 @@
         %h1
           = @video.title
       .four.columns
-        %h1 Social media
+        =render "social_media/like_buttons"
     .row
       .eight.columns
         =render 'social_media/facebook_comments'
@@ -27,6 +27,10 @@
 
 .right_panel.top_padding
   =render :partial => 'blocks/right_panel', :locals => {:video => @video}
+  .the_content.top_big_padding
+    %h4.very-light Our partners
+    =render "shared/partners"
+
 
 
 -if 1 == 2
