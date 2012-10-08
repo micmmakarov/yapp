@@ -8,6 +8,10 @@
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     = csrf_meta_tags
 %body
-  .container.main-container
+  =render 'social_media/facebook_header'
+  .container
     .row
-      = yield
+      .main
+        .header.top_padding
+          =render "layouts/header"
+        =yield

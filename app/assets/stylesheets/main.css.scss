@@ -1,0 +1,148 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  color: #333333;
+  font-size: 15px;
+  text-shadow: 0px 1px 1px white;
+}
+
+.light {
+  color: #666666;
+}
+
+.very-light {
+  color: #999999;
+}
+
+.highlighted {
+  color: #2e988d !important;
+}
+
+h1 {
+  font-size: 21px;
+}
+h2 {
+  font-size: 17px;
+}
+h3 {
+  font-size: 15px;
+  font-weight: normal;
+}
+h4 {
+  font-size: 13px;
+  font-weight: normal;
+}
+h5 {
+  font-size: 12px;
+  font-weight: normal;
+}
+h6 {
+  font-size: 11px;
+  font-weight: normal;
+}
+
+
+
+.main {
+  background: #f7f7f7;
+  display:table;
+  width:100%;
+  box-sizing: border-box;
+}
+
+
+
+@media screen and (max-width: 960px) {
+  .header {
+    display:none;
+  }
+  .middle, .footer2 {
+    width: 70% !important;
+  }
+}
+
+.middle {
+  vertical-align: top;
+  display:table-cell;
+  box-sizing: border-box;
+  padding-bottom:50px;
+  .the_content {
+    padding-left:4%;
+    padding-right:4%;
+    min-height:800px;
+  }
+}
+
+
+.right_panel {
+  background: url(right_panel.png) repeat-y;
+  background-position: left top;
+  display:table-cell;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.top_padding {
+  padding-top:30px;
+}
+
+
+.footer1 {
+  background: #4f423c;
+  position:absolute;
+  width:220px;
+  bottom:0px;
+  content:' ';
+  height:40px;
+  padding-top:15px;
+  padding-left:20px;
+  box-shadow: inset 0px 1px 5px rgba(0,0,0,0.5) !important;
+  font-size: 13px;
+  font-weight: normal;
+  color: white;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+}
+
+.footer2 {
+  background: #4f423c;
+  position:absolute;
+  width:100%;
+  bottom:0px;
+  content:' ';
+  height:50px;
+  padding-top:15px;
+  padding-left:20px;
+  box-shadow: inset 0px 1px 5px rgba(0,0,0,0.2) !important;
+  font-size: 13px;
+  font-weight: normal;
+  color: white;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+
+}
+
+.fb-comments, .fb-comments iframe[style] {width: 100% !important;}
+
+.fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+  width: 100% !important;
+}
+
+
+.browse {
+  font-size: 15px;
+  list-style-type: none;
+  li {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #dcdcdc;
+    border-top: 1px solid #ffffff;
+    &:first-child {
+      border-top: none;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+}

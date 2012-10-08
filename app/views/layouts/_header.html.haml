@@ -1,0 +1,31 @@
+
+.the_content
+  %a.logo{:href => '#'}
+    =image_tag('logo.png')
+  %h4.light
+    True stories from founders of startups
+  .topmenu
+    %a
+      %h5 About
+    %a
+      %h5 Contact
+    %a
+      %h5 Feedback
+
+  %input.search{:type => 'edit', :placeholder => 'Search'}
+
+  %h4.very-light
+    Browse popular category
+
+  %ul.browse
+    %li Category1
+    %li Category2
+    %li Category3
+    %li Category4
+    %li Category5
+
+
+  =render "social_media/likebox"
+
+.footer1
+  StartupStory @2012

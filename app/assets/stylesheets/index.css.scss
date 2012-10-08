@@ -1,0 +1,29 @@
+.main-image-wrap {
+  margin-top:-30px;
+  width:98%;
+  margin-left:auto;
+  margin-right:auto;
+  display: block;
+  position:relative;
+}
+.main-image {
+  width:100%;
+}
+
+.video-image {
+  width:100%;
+}
+.video-wrap {
+  padding:5px;
+  border:1px solid #e8e8e8;
+}
+
+.play {
+  background: url(play.png);
+  margin-top:25%;
+  width: 236px;
+  height:236px;
+  position:absolute;
+  left:50%;
+  margin-left:-118px;
+}

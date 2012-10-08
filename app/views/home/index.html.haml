@@ -1,2 +1,38 @@
-%h1 Videos
+.middle.top_padding
+  .main-image-wrap
+    .play
+      =image_tag('play.png')
+    =image_tag('img.jpg', :class => "main-image")
+  .the_content
+    .row
+      .eight.columns
+        %h1 Popular Interviews
+        .row
+          -@popular.each do |video|
+            .four.columns
+              .video-wrap
+                =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
+              =video.title
+        %h1 Recommended Playlists
+        .row
+          -@playlists.each do |video|
+            .four.columns
+              =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
+              =link_to video.title, video
 
+      .two.columns
+        %h1 Popular Questions
+        %ul.browse
+          %li Category1
+          %li Category2
+          %li Category3
+          %li Category4
+          %li Category5
+      .two.columns
+        %h1 Our Partners
+
+
+
+
+  .footer2
+    Subscribe

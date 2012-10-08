@@ -1,0 +1,69 @@
+.header {
+  background: url(header_bg.png) repeat-y;
+  background-position: -10px top;
+  width:220px;
+  display:table-cell;
+  box-sizing: border-box;
+  vertical-align: top;
+  position:relative;
+  padding-bottom:50px;
+  overflow: hidden;
+
+  .the_content {
+    padding-left:20px;
+    padding-right:20px;
+    width:220px;
+    min-height:800px;
+  }
+
+
+
+}
+
+
+
+.topmenu {
+
+  a {
+    display:block;
+    float:left;
+    width:33%;
+    //text-align: center;
+    &:first-child {
+      text-align:left;
+    }
+    &:last-child {
+      text-align:right;
+    }
+  }
+
+  &:after {
+    clear:both;
+  }
+}
+
+
+.search {
+  background: url(search.png);
+  width: 188px;
+  height: 44px;
+  box-sizing: border-box;
+  padding-left:45px;
+  padding-right:10px;
+  border: none;
+  font-size: 13px;
+  color: #ff7800;
+  &::-webkit-input-placeholder {
+    color: #ff7800;
+  }
+  &:-moz-placeholder  {
+    color: #ff7800;
+  }
+  &:-ms-input-placeholder {
+    color: #ff7800;
+  }
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}

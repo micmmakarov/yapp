@@ -1,24 +1,39 @@
-#notice= notice
-%h2
-  = @video.title
-.row
-  .seven.columns
-    .video
+.middle.top_padding.video_page
+  .the_content
+    .video.flex-video.widescreen
       #video=@video.youtube
-  .five.columns
-    =render :partial => "blocks/add_block", :locals => {:video => @video}
-    =render :partial => "blocks/content", :locals => {:blocks => @video.blocks}
+    #notice= notice
+    .row
+      .eight.columns
+        %h1
+          = @video.title
+      .four.columns
+        %h1 Social media
+    .row
+      .eight.columns
+        =render 'social_media/facebook_comments'
+      .four.columns
+        %h1 related videos
 
-.panel
-  .current_time
-    Current time
-  .duration
-    Duration
 
 
-.block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
+    .panel
+      .current_time
+        Current time
+      .duration
+        Duration
+  .footer2
+    Subscribe
+
+.right_panel.top_padding
+  =render :partial => 'blocks/right_panel', :locals => {:video => @video}
 
 
-= link_to 'Edit', edit_video_path(@video)
-\|
-= link_to 'Back', videos_path
+-if 1 == 2
+
+  .block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
+
+
+  = link_to 'Edit', edit_video_path(@video)
+  \|
+  = link_to 'Back', videos_path
