@@ -1,7 +1,6 @@
 .middle.top_padding.main-page
   .main-image-wrap
-    .play
-      =image_tag('play.png')
+    %a.play{:href => "#"}
     =image_tag('img.jpg', :class => "main-image")
     .sign
       %h1.highlighted
@@ -18,7 +17,10 @@
           -@popular.each do |video|
             .four.columns
               .video-wrap
-                =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
+                =link_to(video, :class => 'video-image') do
+                  =image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg")
+                  .long_button
+                    view
               %h3=video.title
         %hr
         %h1 Recommended Playlists
@@ -26,7 +28,10 @@
           -@playlists.each do |video|
             .four.columns
               .video-wrap
-                =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg", :class => 'video-image'), video
+                =link_to(video, :class => 'video-image') do
+                  =image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg")
+                  .long_button
+                    view
               %h3=video.title
 
       .two.columns
