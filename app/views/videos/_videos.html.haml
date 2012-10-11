@@ -1,0 +1,10 @@
+%h1=caption
+.row
+  -videos.each do |video|
+    .four.columns
+      .video-wrap
+        =link_to(video, :class => 'video-image') do
+          =image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg")
+          .long_button
+            view
+      %h3=video.title

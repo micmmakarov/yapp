@@ -1,0 +1,18 @@
+// Place all the styles related to the internal controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.internal_content {
+  max-width: 800px;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  h5 {
+    font-size: 37px;
+    font-weight:bold;
+  }
+
+  p {
+    font-size: 19px;
+  }
+}

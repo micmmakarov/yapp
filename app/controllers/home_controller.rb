@@ -1,12 +1,18 @@
 class HomeController < ApplicationController
 
+  before_filter :authenticate_user!, :only => :login
+
   def index
 
-    @popular = Video.all(:limit => 3)
-    @playlists = Video.all(:limit => 3)
 
   end
 
   def video
   end
+
+
+  def login
+
+  end
+
 end

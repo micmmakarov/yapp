@@ -1,28 +1,25 @@
 
 .the_content
-  %a.logo{:href => '#'}
+  %a.logo{:href => '/'}
     =image_tag('logo.png')
   %h4.light
     True stories from founders of startups
   .topmenu
-    %a
+    %a{:href => "/about"}
       %h5 About
-    %a
+    %a{:href => "/contact"}
       %h5 Contact
-    %a
+    %a{:href => "/feedback"}
       %h5 Feedback
 
-  %input.search{:type => 'edit', :placeholder => 'Search'}
+  .top-padding
+
+  =render "shared/search"
 
   %h4.very-light
     Browse popular category
 
-  %ul.browse
-    %li Category1
-    %li Category2
-    %li Category3
-    %li Category4
-    %li Category5
+  =render "categories/list"
 
 
   =render "social_media/likebox"

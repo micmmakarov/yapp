@@ -26,6 +26,15 @@ hr {
   color: #2e988d !important;
 }
 
+a {
+  color: #333333;
+  &:hover {
+    color: #2e988d;
+    font-weight:bold;
+
+  }
+}
+
 .white {
   color:white;
 }

@@ -1,5 +1,17 @@
 Yapp::Application.routes.draw do
 
+  get "about" => "internal#about"
+
+  get "contact" => "internal#contact"
+
+  mount Contenteditable::Engine => '/contenteditable'
+
+  devise_for :users
+
+  resources :users
+
+  resources :categories
+
   resources :blocks
 
   resources :videos
@@ -9,6 +21,8 @@ Yapp::Application.routes.draw do
   get "home/index"
 
   get "home/video"
+
+  get "home/login"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -5,8 +5,10 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'devise'
 gem "haml-rails"
 gem 'coffee-rails', '~> 3.2.1'
+gem "contenteditable", :github => 'micmmakarov/contenteditable', :branch => :master
 
 group :development do
   gem 'pry'

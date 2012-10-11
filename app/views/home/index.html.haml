@@ -12,36 +12,12 @@
     %hr
     .row
       .eight.columns
-        %h1 Popular Interviews
-        .row
-          -@popular.each do |video|
-            .four.columns
-              .video-wrap
-                =link_to(video, :class => 'video-image') do
-                  =image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg")
-                  .long_button
-                    view
-              %h3=video.title
+        =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Popular Interviews"}
         %hr
-        %h1 Recommended Playlists
-        .row
-          -@playlists.each do |video|
-            .four.columns
-              .video-wrap
-                =link_to(video, :class => 'video-image') do
-                  =image_tag("http://img.youtube.com/vi/#{video.youtube}/mqdefault.jpg")
-                  .long_button
-                    view
-              %h3=video.title
-
+        =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Recommended Playlists"}
       .two.columns
         %h1 Popular Questions
-        %ul.browse
-          %li Category1
-          %li Category2
-          %li Category3
-          %li Category4
-          %li Category5
+        =render "categories/list"
       .two.columns
         %h1 Our Partners
         =render "shared/partners"

@@ -1,12 +1,15 @@
-google.load "swfobject", "2.1"
+google.load "swfobject", "2.2"
 
 window.onYouTubePlayerReady = (playerId) ->
   ytplayer = $("#ytPlayer")
+  ytPlayer.addEventListener "onStateChange", "onPlayerStateChange"
+  ytPlayer.addEventListener "onError", "onPlayerError"
   setInterval updatePlayerInfo, 250
   updatePlayerInfo()
-  ytplayer.addEventListener "onStateChange", "onPlayerStateChange"
-  ytplayer.addEventListener "onError", "onPlayerError"
 
+
+window.onPlayerStateChange = (newState) ->
+  window.player_state = newState
 
 
 window.seekTo = (seconds) ->
@@ -23,9 +26,6 @@ loadVideo = (videoID, startSeconds) ->
   $(".video_title").text(window.playlist[window.current_block].title) if window.playlist_mode == true
 
 
-onPlayerStateChange = (newState) ->
-  updateHTML "playerState", newState
-
 # This function is called when an error is thrown by the player
 onPlayerError = (errorCode) ->
   alert "An error occured of type:" + errorCode
@@ -36,10 +36,16 @@ updatePlayerInfo = ->
   # Also check that at least one function exists since when IE unloads the
   # page, it will destroy the SWF before clearing the interval.
   if ytPlayer and ytPlayer.getDuration
+
+    $("#playerState").text(ytPlayer.getVideoLoadedFraction())
+
     playList() if window.playlist_mode == true
     current_time = ytPlayer.getCurrentTime()
-    $(".duration").text(ytPlayer.getDuration() / 60.00 + " minutes")
+    duration = ytPlayer.getDuration()
+    progress = current_time / duration * 100
+    $(".duration").text(duration / 60.00 + " minutes")
     $(".current_time").text(current_time)
+    $(".the-progress").css("width", progress + "%")
     if window.playlist_mode == true
       if current_time > window.playlist[window.current_block].end_time
         window.current_block++
@@ -61,6 +67,18 @@ updatePlayerInfo = ->
 
 
 # The "main method" of this sample. Called when someone clicks "Run".
+pausePlayer = ->
+  if ytPlayer and ytPlayer.getDuration
+    ytPlayer.pauseVideo()
+
+togglePlayer = ->
+  if ytPlayer and ytPlayer.getDuration
+    if (window.player_state is -1) or (window.player_state is 2)
+      ytPlayer.playVideo()
+    else if window.player_state is 1
+      ytPlayer.pauseVideo()
+
+
 loadPlayer = ->
   # The video to load
   videoID = $("#video").text()
@@ -70,7 +88,7 @@ loadPlayer = ->
   $(".video_title").text(window.playlist[0].title) if window.playlist_mode == true
 
   # Lets Flash from another domain call JavaScript
-  params = allowScriptAccess: "always"
+  params = allowScriptAccess: "always", allowFullScreen: "true"
 
   # The element id of the Flash embed
   atts = id: "ytPlayer"
@@ -108,3 +126,12 @@ $(document).ready ->
     else
       seekTo(start, true)
 
+  $(document).on "click", ".video .layer", ->
+    togglePlayer()
+
+  $(document).on "click", ".progress-bar", (e) ->
+    x = e.pageX - $(this).offset().left
+    persent = x / $(this).width()
+    duration = ytPlayer.getDuration()
+    seek_to = duration * persent
+    seekTo(seek_to, true)

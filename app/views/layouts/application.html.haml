@@ -15,4 +15,11 @@
       .main
         .header.top_padding
           =render "layouts/header"
-        =yield
+        -if controller.controller_name != "videos" and controller.controller_name != "home"
+          .middle.top_padding.main-page
+            .internal_content
+              =yield
+            .footer2
+              Subscribe
+        -else
+          =yield
