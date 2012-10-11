@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121011022122) do
+ActiveRecord::Schema.define(:version => 20121011054822) do
 
   create_table "blocks", :force => true do |t|
     t.integer  "start_time"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20121011022122) do
     t.integer  "interviewee_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.text     "description"
   end
 
 end

@@ -10,13 +10,15 @@
       .eight.columns
         %h1
           = @video.title
+        %p
+          = @video.description
       .four.columns
         =render "social_media/like_buttons"
     .row
       .eight.columns
         =render 'social_media/facebook_comments'
       .four.columns
-        %h1 related videos
+        =render :partial => "videos/related", :locals => {:videos => popular, :caption => "Related Videos"}
 
 
 
