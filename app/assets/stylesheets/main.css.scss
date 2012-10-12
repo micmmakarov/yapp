@@ -11,8 +11,10 @@ html body {
 }
 
 hr {
-  border-top: 1px dashed #c8c8c8;
+  border-top: none;
   border-bottom: none;
+  background: url(dots.png) repeat-x;
+  height:3px;
   margin-top:15px;
   margin-bottom:15px;
 }
@@ -36,6 +38,11 @@ a {
     font-weight:bold;
 
   }
+  -webkit-transition: all 0.2s ease-out;  /* Safari 3.2+, Chrome */
+  -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.2s ease-out;  /* Opera 10.5–12.00 */
+  transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
+
 }
 
 .white {
@@ -72,6 +79,7 @@ h6 {
   display:table;
   width:100%;
   box-sizing: border-box;
+  overflow:hidden;
 }
 
 
@@ -86,6 +94,7 @@ h6 {
 }
 
 .middle {
+  overflow:hidden;
   vertical-align: top;
   display:table-cell;
   box-sizing: border-box;

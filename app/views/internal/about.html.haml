@@ -4,5 +4,9 @@
 =ceditable("about description", "p")
 
 %hr
+%h1 Our partners
+=render "shared/partners"
+
+%hr
 
 =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Popular Interviews"}

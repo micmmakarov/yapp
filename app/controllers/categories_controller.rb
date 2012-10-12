@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+  before_filter :authenticate_user!, :except => :show
+
   # GET /categories
   # GET /categories.json
   def index
@@ -80,4 +83,25 @@ class CategoriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def add_category
+    category_id = params[:category_id]
+    object_type = params[:object_type]
+    object_id = params[:object_id]
+
+    category = CategoryRelation.create!(:category_id => category_id, :categoryable_type => object_type, :categoryable_id => object_id)
+    @object = category.categoryable
+  end
+
+  def delete_category
+    category_id = params[:category_id]
+    object_type = params[:object_type]
+    object_id = params[:object_id]
+
+    category = CategoryRelation.where(:category_id => category_id, :categoryable_type => object_type, :categoryable_id => object_id).first
+    @object = category.categoryable
+    category.destroy
+
+  end
+
 end

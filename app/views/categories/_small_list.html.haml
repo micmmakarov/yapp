@@ -1,0 +1,5 @@
+.categories_list
+  -object.categories.each do |c|
+    .category
+      %h1{:style => "display:inline;"}=c.title
+      =link_to "X", "/delete_category/#{c.id}/#{object.class.to_s}/#{object.id}", :method => 'POST', :remote => true

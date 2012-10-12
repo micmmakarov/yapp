@@ -4,6 +4,8 @@ Yapp::Application.routes.draw do
 
   get "contact" => "internal#contact"
 
+  get "feedback" => "internal#feedback"
+
   mount Contenteditable::Engine => '/contenteditable'
 
   devise_for :users
@@ -23,6 +25,9 @@ Yapp::Application.routes.draw do
   get "home/video"
 
   get "home/login"
+
+  match "add_category/:category_id/:object_type/:object_id" => "categories#add_category"
+  match "delete_category/:category_id/:object_type/:object_id" => "categories#delete_category"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
