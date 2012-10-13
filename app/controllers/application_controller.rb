@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :admin?, :popular, :authenticate_admin!, :categories
+  helper_method :admin?, :popular, :authenticate_admin!, :categories, :random
   contenteditable_filter "user_signed_in?"
 
   def admin?
@@ -18,6 +18,10 @@ class ApplicationController < ActionController::Base
 
   def popular
     Video.all(:limit => 3)
+  end
+
+  def random
+    Video.all(:order => 'random()', :limit =>3)
   end
 
   def categories

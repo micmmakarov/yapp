@@ -5,5 +5,6 @@ class Video < ActiveRecord::Base
   has_many :blocks
   has_many :category_relations, :as => :categoryable
   has_many :categories, :through => :category_relations
+  belongs_to :interviewee
 
 end

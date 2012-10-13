@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @interviewee.title
+%p
+  %b Description:
+  = @interviewee.description
+%p
+  %b Pic:
+  = @interviewee.pic
+
+= link_to 'Edit', edit_interviewee_path(@interviewee)
+\|
+= link_to 'Back', interviewees_path

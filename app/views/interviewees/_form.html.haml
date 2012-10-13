@@ -1,0 +1,24 @@
+= form_for @interviewee, :html => {:multipart => true} do |f|
+  - if @interviewee.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@interviewee.errors.count, "error")} prohibited this interviewee from being saved:"
+      %ul
+        - @interviewee.errors.full_messages.each do |msg|
+          %li= msg
+
+
+
+  .field
+    =f.label :img
+    = image_tag(@interviewee.pic_url) if @interviewee.pic?
+    = f.file_field :pic
+    = f.hidden_field :pic_cache
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save'

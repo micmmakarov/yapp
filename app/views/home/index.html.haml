@@ -14,7 +14,7 @@
       .eight.columns
         =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Popular Interviews"}
         %hr
-        =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Recommended Playlists"}
+        =render :partial => "videos/videos", :locals => {:videos => random, :caption => "Recommended Playlists"}
       .two.columns
         %h1 Categories
         =render "categories/list"

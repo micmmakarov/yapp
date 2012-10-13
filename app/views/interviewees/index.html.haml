@@ -1,0 +1,23 @@
+%h1 Listing interviewees
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th Pic
+    %th
+    %th
+    %th
+
+  - @interviewees.each do |interviewee|
+    %tr
+      %td= interviewee.title
+      %td= interviewee.description
+      %td= image_tag interviewee.pic_url(:small_bw) if interviewee.pic?
+      %td= link_to 'Show', interviewee
+      %td= link_to 'Edit', edit_interviewee_path(interviewee)
+      %td= link_to 'Destroy', interviewee, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Interviewee', new_interviewee_path
