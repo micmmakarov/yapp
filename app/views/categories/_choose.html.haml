@@ -1,9 +1,11 @@
 .choose_categories
-  .large.button.dropdown
-    Add a category
-    %ul.browse
-      -categories.each do |c|
-        %li
-          =link_to c.title, "/add_category/#{c.id}/#{object.class.to_s}/#{object.id}", :method => 'POST', :remote => true
-
-  = render :partial => "categories/small_list", :locals => {:object => object}
+  .row
+    .six.columns
+      .large.button.dropdown
+        Add a category
+        %ul.browse
+          -categories.each do |c|
+            %li
+              =link_to c.title, "/add_category/#{c.id}/#{object.class.to_s}/#{object.id}", :method => 'POST', :remote => true
+    .six.columns
+      =render :partial => "categories/small_list", :locals => {:object => object}

@@ -1,5 +1,8 @@
--if admin?
-  =render :partial => "blocks/add_block", :locals => {:video => video}
+.the_content
+  -if admin?
+    =render :partial => "blocks/add_block", :locals => {:video => video}
 =render :partial => "blocks/content", :locals => {:blocks => video.blocks}
--if admin?
-  =render :partial => "categories/choose", :locals => {:object => video}
+
+.the_content
+  -if admin?
+    =render :partial => "categories/choose", :locals => {:object => video}

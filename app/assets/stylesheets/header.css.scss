@@ -16,8 +16,29 @@
     min-height:800px;
   }
 
+  .tagline {
+    margin-top:5px;
+    margin-bottom:0px;
+  }
 
+  .topmenu {
+    margin-bottom:15px;
+    overflow:hidden;
+  }
 
+  .browse-header {
+    margin-top: 25px;
+    margin-bottom: 5px;
+  }
+
+  .logo {
+    margin-top:-7px;
+    display:block;
+  }
+  .browse {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
 }
 
 

@@ -1,6 +1,7 @@
-.fb-like{"data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "true", "data-width" => "100"}
+.like_buttons.top_padding
+  .fb-like{"data-layout" => "button_count", "data-send" => "true", "data-show-faces" => "true", "data-width" => "100"}
 
-#vk_like
-:javascript
-  VK.Widgets.Like("vk_like", {type: "mini"});
+  .top_padding
+    =render "social_media/tweet_button"
+
 

@@ -1,9 +1,17 @@
-%p#notice= notice
+.category.top_padding
+  .the_content
+    %p#notice= notice
 
-%p
-  %b Title:
-  = @category.title
+    %h1.big_text
+      = @category.title
 
-= link_to 'Edit', edit_category_path(@category)
-\|
-= link_to 'Back', categories_path
+    %hr
+
+    -if admin?
+      = link_to 'Edit', edit_category_path(@category)
+      \|
+      = link_to 'Back', categories_path
+
+    =render :partial => "videos/search", :locals => {:videos => @category.the_videos}
+
+    %hr

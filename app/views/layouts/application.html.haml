@@ -15,11 +15,18 @@
       .main
         .header.top_padding
           =render "layouts/header"
-        -if controller.controller_name != "videos" and controller.controller_name != "home"
+        -if controller.controller_name != "videos" and controller.controller_name != "home" and controller.controller_name != "categories"
           .middle.top_padding.main-page
             .internal_content
               =yield
             .footer2
               Subscribe
         -else
-          =yield
+          -if controller.action_name != 'new' and controller.action_name != "edit"
+            =yield
+          -else
+            .middle.top_padding.main-page
+              .internal_content
+                =yield
+              .footer2
+                Subscribe

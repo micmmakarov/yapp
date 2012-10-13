@@ -15,9 +15,16 @@
     -o-transition: all 0.2s ease-out;  /* Opera 10.5–12.00 */
     transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
     background: url(transparent.gif) no-repeat right center;
-
+    padding-left:5px;
     &:hover {
       background: url(arrow.png) no-repeat right center;
     }
+  }
+}
+
+.category {
+  .the_content {
+    padding-left:5%;
+    padding-right:5%;
   }
 }

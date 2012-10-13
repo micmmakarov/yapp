@@ -13,20 +13,23 @@
 }
 
 .long_button {
+  cursor: pointer;
   border-top: 1px solid rgba(255,255,255,0.5);
   box-shadow: 1px 1px 5px rgba(0,0,0,0.7);
   background-color: #2e988d;
-  border-radius: 30px;
-  padding:10px 20px;
+  border-radius: 15px;
+  padding:12px 22px;
   color:white;
   text-shadow: -1px -1px 1px rgba(0,0,0,0.5);
   font-size:15px;
-  -webkit-transition: all 0.5s ease-out;  /* Safari 3.2+, Chrome */
-  -moz-transition: all 0.5s ease-out;  /* Firefox 4-15 */
-  -o-transition: all 0.5s ease-out;  /* Opera 10.5–12.00 */
-  transition: all 0.5s ease-out;  /* Firefox 16+, Opera 12.50+ */
+  display: inline-block;
+  -webkit-transition: all 0.2s ease-out;  /* Safari 3.2+, Chrome */
+  -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.2s ease-out;  /* Opera 10.5–12.00 */
+  transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
   &:hover {
     background-color: #0e784d !important;
+    color:white;
   }
 
 }

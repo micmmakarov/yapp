@@ -1,8 +1,8 @@
 
 .the_content
   %a.logo{:href => '/'}
-    =image_tag('logo.png')
-  %h4.light
+    =image_tag('ss_logo.png')
+  %h4.light.tagline
     True stories from founders of startups
   .topmenu
     %a{:href => "/about"}
@@ -16,8 +16,8 @@
 
   =render "shared/search"
 
-  %h4.very-light
-    Browse popular category
+  %h4.very-light.browse-header
+    browse popular category
 
   =render "categories/list"
 

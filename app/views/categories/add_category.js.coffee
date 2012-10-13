@@ -1,1 +1,1 @@
-$(".categories_list").replaceWith("<%= escape_javascript(render :partial => "small_list", :locals => {:object => @object}) %>")
+$(".categories_list[data-object-type='<%= @object.class.to_s %>'][data-object-id='<%= @object.id %>']").replaceWith("<%= escape_javascript(render :partial => "small_list", :locals => {:object => @object}) %>")
