@@ -37,7 +37,9 @@
   }
   .browse {
     max-height: 300px;
-    overflow-y: scroll;
+    &:hover {
+      overflow-y: scroll;
+    }
   }
 }
 
