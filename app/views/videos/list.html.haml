@@ -1,0 +1,50 @@
+.middle.top_padding.video_page
+  .the_content
+    .video.flex-video.widescreen
+      .progress-bar
+        .the-progress
+      .layer
+      #video=1
+    #notice= notice
+    .row
+      .eight.columns
+        %h1
+          = @blocks.first.video.title
+        %p
+          = @blocks.first.video.description
+      .four.columns
+        =render "social_media/like_buttons"
+    .row
+      .eight.columns
+        %h1 Leave your comment
+        =render 'social_media/facebook_comments'
+      .four.columns
+        =render :partial => "videos/related", :locals => {:videos => popular, :caption => "Related Videos"}
+
+
+
+    .panel
+      .current_time
+        Current time
+      .duration
+        Duration
+  .footer2
+    Subscribe
+
+.right_panel.top_padding
+  =render :partial => "blocks/content", :locals => {:blocks => @blocks}
+  .the_content.top_big_padding
+    %h4.very-light Our partners
+    =render "shared/partners"
+
+
+
+-if 1 == 2
+  .block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
+
+
+
+
+
+:javascript
+  loadPlaylist(#{@blocks_json});

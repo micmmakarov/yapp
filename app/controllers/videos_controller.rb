@@ -1,6 +1,30 @@
 class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
+
+  def list
+
+    @blocks = Block.all
+
+    @blocks_json = @blocks.map do |b|
+      e = {}
+      e[:start_time] = b.start_time
+      e[:end_time] = b.end_time
+      e[:answer_start] = b.answer_start
+      e[:title] = b.title
+      e[:youtube] = b.video.youtube
+      e[:id] = b.id
+      e
+    end.to_json
+
+
+    respond_to do |format|
+      format.html # index.html.haml
+      format.json { render json: @blocks }
+    end
+
+  end
+
   def index
     @videos = Video.all
 
