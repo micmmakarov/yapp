@@ -1,6 +1,7 @@
 class BlocksController < ApplicationController
   # GET /blocks
   # GET /blocks.json
+  before_filter :authenticate_user!, :except => :show
 
 
   def index
