@@ -65,9 +65,11 @@ class BlocksController < ApplicationController
 
     respond_to do |format|
       if @block.update_attributes(params[:block])
+        format.js
         format.html { redirect_to @block, notice: 'Block was successfully updated.' }
         format.json { head :no_content }
       else
+        format.js
         format.html { render action: "edit" }
         format.json { render json: @block.errors, status: :unprocessable_entity }
       end

@@ -14,7 +14,7 @@
 
   .block_list {
 
-    .block_form {
+    .block_edit_form {
       display:none;
     }
 
@@ -57,7 +57,7 @@
     z-index:100px;
     content: ' ';
   }
-  .block_form {
+  .block_edit_form {
     display:block !important;
     background:rgba(255,255,255,0.5);
     width:90%;
