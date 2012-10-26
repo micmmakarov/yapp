@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @contributor.title
+%p
+  %b Description:
+  = @contributor.description
+%p
+  %b Pic:
+  = @contributor.pic
+
+= link_to 'Edit', edit_contributor_path(@contributor)
+\|
+= link_to 'Back', contributors_path

@@ -43,6 +43,7 @@ class BlocksController < ApplicationController
   # POST /blocks.json
   def create
     @block = Block.new(params[:block])
+    @start_time = @block.end_time
 
     respond_to do |format|
       if @block.save

@@ -1,5 +1,7 @@
 Yapp::Application.routes.draw do
 
+  resources :contributors
+
   resources :interviewees
 
   get "about" => "internal#about"

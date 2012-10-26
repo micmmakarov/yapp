@@ -4,7 +4,7 @@ class VideosController < ApplicationController
 
   def list
 
-    @blocks = Block.all
+    @blocks = Block.all.order(:start_time)
 
     @blocks_json = @blocks.map do |b|
       e = {}
@@ -13,6 +13,8 @@ class VideosController < ApplicationController
       e[:answer_start] = b.answer_start
       e[:title] = b.title
       e[:youtube] = b.video.youtube
+      e[:video_title] = b.video.title
+      e[:video_description] = b.video.description
       e[:id] = b.id
       e
     end.to_json

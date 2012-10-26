@@ -8,9 +8,9 @@
     #notice= notice
     .row
       .eight.columns
-        %h1
+        %h1.video_title
           = @blocks.first.video.title
-        %p
+        %p.video_description
           = @blocks.first.video.description
       .four.columns
         =render "social_media/like_buttons"

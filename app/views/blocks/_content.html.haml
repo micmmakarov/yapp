@@ -4,4 +4,6 @@
       %h2=b.title
       %h6
         Start time: #{b.start_time}, end time #{b.end_time}
+      -if admin?
+        =render :partial => "blocks/block_form", :locals => {:block => b}
       .triangle

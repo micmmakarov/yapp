@@ -4,7 +4,7 @@
       .progress-bar
         .the-progress
       .layer
-      #video=@video.youtube
+      #video{'data-video' => @video.youtube}
     #notice= notice
     .row
       .eight.columns
@@ -23,13 +23,8 @@
 
 
 
-    .panel
-      .current_time
-        Current time
-      .duration
-        Duration
-  .footer2
-    Subscribe
+  =render "layouts/footer"
+
 
 .right_panel.top_padding
   =render :partial => 'blocks/right_panel', :locals => {:video => @video}
@@ -39,11 +34,13 @@
 
 
 
--if 1 == 2
+-if admin?
 
-  .block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
 
 
   = link_to 'Edit', edit_video_path(@video)
   \|
   = link_to 'Back', videos_path
+
+-if 1 == 2
+  .block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)

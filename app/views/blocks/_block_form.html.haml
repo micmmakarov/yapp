@@ -1,0 +1,30 @@
+.block_form
+  =form_for block, :remote => true do |f|
+    =f.hidden_field :video_id, :value => block.video.id
+    .field
+      =f.label :title
+      =f.text_field :title
+    .field
+      =f.label :start_time
+      .row.collapse
+        .four.mobile-one.columns
+          .postfix.button.expand.measure{:href => "#"} Now
+        .eight.mobile-three.columns
+          =f.number_field :start_time
+    .field
+      =f.label :answer_start
+      .row.collapse
+        .four.mobile-one.columns
+          .postfix.button.expand.measure{:href => "#"} Now
+        .eight.mobile-three.columns
+          =f.number_field :answer_start
+    .field
+      =f.label :end_time
+      .row.collapse
+        .four.mobile-one.columns
+          .postfix.button.expand.measure{:href => "#"} Now
+        .eight.mobile-three.columns
+          =f.number_field :end_time
+
+    .actions
+      =f.submit 'Save', :class => 'long_button'

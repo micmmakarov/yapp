@@ -14,6 +14,11 @@
 
   .block_list {
 
+    .block_form {
+      display:none;
+    }
+
+
     div.block_link {
       cursor: pointer;
       padding-top:10px;
@@ -51,6 +56,13 @@
     overflow:hidden;
     z-index:100px;
     content: ' ';
+  }
+  .block_form {
+    display:block !important;
+    background:rgba(255,255,255,0.5);
+    width:90%;
+    padding:20px;
+    border-radius: 20px;;
   }
 
 }

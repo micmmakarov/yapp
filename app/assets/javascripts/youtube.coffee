@@ -23,7 +23,7 @@ updateHTML = (elmId, value) ->
 loadVideo = (videoID, startSeconds) ->
   window.current_video = videoID
   ytPlayer.loadVideoById videoID, startSeconds if ytPlayer
-  $(".video_title").text(window.playlist[window.current_block].title) if window.playlist_mode == true
+  $(".video_title").text(window.playlist[window.current_block].video_title) if window.playlist_mode == true
 
 
 # This function is called when an error is thrown by the player
@@ -49,8 +49,10 @@ updatePlayerInfo = ->
     if window.playlist_mode == true
       if current_time > window.playlist[window.current_block].end_time
         window.current_block++
-        $(".video_title").text(window.playlist[window.current_block].title)
+        #$(".video_title").text(window.playlist[window.current_block].title)
         window.current_block = 0 if window.current_block >= playlist.length
+        $(".video_title").text(window.playlist[window.current_block].video_title)
+        $(".video_description").text(window.playlist[window.current_block].video_description)
         loadVideo(window.playlist[window.current_block].youtube, window.playlist[window.current_block].start_time)
       $(".video_block[data-id='" + window.playlist[window.current_block].id+ "']").addClass("active_block")
       $(".video_block[data-id!='" + window.playlist[window.current_block].id+ "']").removeClass("active_block")
@@ -81,11 +83,11 @@ togglePlayer = ->
 
 loadPlayer = ->
   # The video to load
-  videoID = $("#video").text()
+  videoID = $("#video").data('video')
   videoID = window.playlist[0].youtube if window.playlist_mode == true
 
   window.current_video = videoID
-  $(".video_title").text(window.playlist[0].title) if window.playlist_mode == true
+  $(".video_title").text(window.playlist[0].video_title) if window.playlist_mode == true
 
   # Lets Flash from another domain call JavaScript
   params = allowScriptAccess: "always", allowFullScreen: "true"

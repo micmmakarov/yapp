@@ -1,0 +1,25 @@
+= form_for @contributor, :html => {:multipart => true} do |f|
+  - if @contributor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@contributor.errors.count, "error")} prohibited this contributor from being saved:"
+      %ul
+        - @contributor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    =f.label :pic
+    = image_tag(@contributor.pic_url) if @contributor.pic?
+    = f.file_field :pic
+    = f.hidden_field :pic_cache
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :pic
+    = f.text_field :pic
+  .actions
+    = f.submit 'Save'
