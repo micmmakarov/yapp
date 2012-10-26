@@ -28,7 +28,7 @@ Yapp::Application.routes.draw do
 
   get "home/video"
 
-  get "home/login"
+  get "login" => "home#login"
 
   match "add_category/:category_id/:object_type/:object_id" => "categories#add_category"
   match "delete_category/:category_id/:object_type/:object_id" => "categories#delete_category"

@@ -12,7 +12,7 @@ class HomeController < ApplicationController
 
 
   def login
-
+    redirect_to videos_url
   end
 
 end
