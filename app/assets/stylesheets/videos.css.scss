@@ -12,6 +12,14 @@
 
 .right_panel {
 
+  .blocks_wrap {
+    overflow-y:scroll;
+    height:700px;
+    width:100%;
+    margin-left:-15px;
+    padding-left:15px;
+  }
+
   .block_list {
 
     .block_edit_form {

@@ -12,6 +12,7 @@ gem "contenteditable", :github => 'micmmakarov/contenteditable', :branch => :mas
 gem 'carrierwave'
 gem "fog", "~> 1.3.1"
 gem 'rmagick'
+gem 'translit'
 
 group :development do
   gem 'pry'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013210427) do
+ActiveRecord::Schema.define(:version => 20121028015153) do
 
   create_table "blocks", :force => true do |t|
     t.integer  "start_time"
@@ -37,6 +37,14 @@ ActiveRecord::Schema.define(:version => 20121013210427) do
     t.integer  "category_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "contributors", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "pic"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "interviewees", :force => true do |t|
@@ -85,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20121013210427) do
     t.datetime "updated_at",     :null => false
     t.text     "description"
     t.string   "img"
+    t.string  "slug"
   end
 
 end

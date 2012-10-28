@@ -40,7 +40,10 @@ class VideosController < ApplicationController
   # GET /videos/1
   # GET /videos/1.json
   def show
-    @video = Video.find(params[:id])
+    slug = params[:slug]
+
+    @video = Video.find(params[:id]) if slug.blank?
+    @video = Video.find_by_slug(slug) if slug.present?
 
     respond_to do |format|
       format.html # show.html.erb

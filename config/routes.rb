@@ -22,6 +22,8 @@ Yapp::Application.routes.draw do
 
   resources :videos
 
+  get ":slug" => "videos#show"
+
   get "list" => "videos#list"
 
   get "home/index"
