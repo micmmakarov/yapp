@@ -13,11 +13,20 @@
 .right_panel {
 
   .blocks_wrap {
-    overflow-y:scroll;
+    overflow-y:hidden;
     height:700px;
     width:100%;
     margin-left:-15px;
     padding-left:15px;
+    -webkit-transition: all 0.3s ease-out;  /* Safari 3.2+, Chrome */
+    -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
+    -o-transition: all 0.3s ease-out;  /* Opera 10.5–12.00 */
+    transition: all 0.3s ease-out;  /* Firefox 16+, Opera 12.50+ */
+
+
+    &:hover {
+      overflow-y:scroll;
+    }
   }
 
   .block_list {
