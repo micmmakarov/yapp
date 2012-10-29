@@ -1,0 +1,18 @@
+.blocks_wrap
+  .block_list
+    -if blocks.count > 0
+      -blocks.each_with_index do |b, i|
+        .block_link.video_block{'data-start' => b.start_time, 'data-end' => b.end_time, 'data-id' => b.id, 'data-video' => b.video.youtube, 'data-no' => i}
+          .row
+            .eight.columns
+              %h2=b.title
+              %h6
+                Start time: #{b.start_time}, end time #{b.end_time}
+            .four.columns
+              .white_box
+                %h4= link_to 'Delete', b, :confirm => "Are you sure you wanna delete the block: #{b.title}?", :method => :delete, :remote => true
+                %h4
+                  %a.block_edit_link{:href => "#"} Edit
+          -if admin?
+            =render :partial => "blocks/block_form", :locals => {:block => b}
+          .triangle

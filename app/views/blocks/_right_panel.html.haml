@@ -1,8 +1,8 @@
 .the_content
   -if admin?
     =render :partial => "blocks/add_block", :locals => {:video => video}
-=render :partial => "blocks/content", :locals => {:blocks => video.blocks}
+-if admin?
+  =render :partial => "blocks/content_admin", :locals => {:blocks => video.blocks.order(:start_time)}
+-else
+  =render :partial => "blocks/content", :locals => {:blocks => video.blocks.order(:start_time)}
 
-.the_content
-  -if admin?
-    =render :partial => "categories/choose", :locals => {:object => video}

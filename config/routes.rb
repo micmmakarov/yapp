@@ -22,7 +22,6 @@ Yapp::Application.routes.draw do
 
   resources :videos
 
-  get ":slug" => "videos#show"
 
   get "list" => "videos#list"
 
@@ -34,6 +33,9 @@ Yapp::Application.routes.draw do
 
   match "add_category/:category_id/:object_type/:object_id" => "categories#add_category"
   match "delete_category/:category_id/:object_type/:object_id" => "categories#delete_category"
+
+  get ":slug" => "videos#show"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

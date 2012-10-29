@@ -1,10 +1,13 @@
 .middle.top_padding.video_page
   .the_content
     .video.flex-video.widescreen
-      .progress-bar
+      -#.progress-bar
         .the-progress
-      .layer
+      -#.layer
       #video{'data-video' => @video.youtube}
+    -if admin?
+      Current time:
+      %span.current_time
     #notice= notice
     .row
       .eight.columns
@@ -34,13 +37,12 @@
 
 
 
--if admin?
 
 
 
-  = link_to 'Edit', edit_video_path(@video)
-  \|
-  = link_to 'Back', videos_path
 
 -if 1 == 2
   .block_link.button{'data-start' => '50', 'data-end' => '100', 'data-video' => 'qlEsPBy4K48'} Example of link to external video (will play Steve Blank from 50 second)
+  = link_to 'Edit', edit_video_path(@video)
+  \|
+  = link_to 'Back', videos_path

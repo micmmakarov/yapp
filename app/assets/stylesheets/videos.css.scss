@@ -14,6 +14,7 @@
 
   .blocks_wrap {
     overflow-y:hidden;
+    overflow-x:hidden;
     height:600px;
     width:100%;
     margin-left:-15px;
@@ -48,6 +49,12 @@
       -moz-transition: all 0.5s ease-out;  /* Firefox 4-15 */
       -o-transition: all 0.5s ease-out;  /* Opera 10.5–12.00 */
       transition: all 0.5s ease-out;  /* Firefox 16+, Opera 12.50+ */
+
+      &:hover {
+        .white_box {
+          opacity:1 !important;
+        }
+      }
     }
 
   }
@@ -75,7 +82,9 @@
     content: ' ';
   }
   .block_edit_form {
-    display:block !important;
+    height:auto;
+    overflow:hidden;
+    //display:block !important;
     background:rgba(255,255,255,0.5);
     width:90%;
     padding:20px;
@@ -86,4 +95,18 @@
 
 .video_link {
   cursor: pointer;
+}
+
+.white_box {
+  opacity:0;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right:5px;
+  background: rgba(255,255,255,0.9);
+  text-align:center;
+  -webkit-transition: all 0.2s ease-out;  /* Safari 3.2+, Chrome */
+  -moz-transition: all 0.2s ease-out;  /* Firefox 4-15 */
+  -o-transition: all 0.2s ease-out;  /* Opera 10.5–12.00 */
+  transition: all 0.2s ease-out;  /* Firefox 16+, Opera 12.50+ */
+
 }

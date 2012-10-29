@@ -96,8 +96,8 @@ loadPlayer = ->
   atts = id: "ytPlayer"
 
   # All of the magic handled by SWFObject (http://code.google.com/p/swfobject/)
-  swfobject.embedSWF "http://www.youtube.com/apiplayer?video_id=" + videoID + "&version=3&enablejsapi=1&playerapiid=player1", "video", "480", "295", "9", null, null, params, atts
-
+  #swfobject.embedSWF "http://www.youtube.com/apiplayer?video_id=" + videoID + "&version=3&enablejsapi=1&playerapiid=player1&hl=ru&cc_lang_pref=fr&cc_load_policy=1", "video", "480", "295", "9", null, null, params, atts
+  swfobject.embedSWF "http://www.youtube.com/v/" + videoID + "?version=3&enablejsapi=1&playerapiid=player1&theme=light&amp;cc_load_policy=1&amp;hl=ru&amp;", "video", "480", "295", "9", null, null, params, atts
 
 #plays from list
 playList = ->
