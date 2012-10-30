@@ -16,7 +16,10 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])
+    slug = params[:slug]
+
+    @category = Category.find(params[:id]) if slug.blank?
+    @category = Category.find_by_slug(slug) if slug.present?
 
     respond_to do |format|
       format.html # show.html.erb

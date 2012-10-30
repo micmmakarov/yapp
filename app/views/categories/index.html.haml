@@ -2,14 +2,18 @@
 
 %table
   %tr
+    %th Address
     %th Title
+    %th Description
     %th
     %th
     %th
 
   - @categories.each do |category|
     %tr
+      %td= category.slug
       %td= category.title
+      %td= category.description
       %td= link_to 'Show', category
       %td= link_to 'Edit', edit_category_path(category)
       %td= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete
