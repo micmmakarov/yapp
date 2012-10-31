@@ -27,13 +27,17 @@
     height:140px;
     float:left;
   }
-  p {
+  .text {
     float:left;
     display:block;
     margin-left:20px;
     margin-rigth:20px;
     //width:80%;
     box-sizing: border-box;
+    h1 {
+    }
+    p {
+    }
   }
 
   &:after {
