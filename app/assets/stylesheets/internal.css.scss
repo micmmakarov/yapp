@@ -16,3 +16,28 @@
     font-size: 19px;
   }
 }
+
+.member {
+  overflow:hidden;
+  padding-bottom:20px;
+  .pic-wrap {
+    padding:5px;
+    border:1px solid #e8e8e8;
+    width:140px;
+    height:140px;
+    float:left;
+  }
+  p {
+    float:left;
+    display:block;
+    margin-left:20px;
+    margin-rigth:20px;
+    //width:80%;
+    box-sizing: border-box;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+}
