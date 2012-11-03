@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030011942) do
+ActiveRecord::Schema.define(:version => 20121103230449) do
 
   create_table "blocks", :force => true do |t|
     t.integer  "start_time"
@@ -27,10 +27,11 @@ ActiveRecord::Schema.define(:version => 20121030011942) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
     t.string   "slug"
     t.string   "description"
+    t.integer  "category_relations_count", :default => 0
   end
 
   create_table "category_relations", :force => true do |t|
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20121030011942) do
     t.text     "description"
     t.string   "img"
     t.string   "slug"
+    t.integer  "featured"
   end
 
 end

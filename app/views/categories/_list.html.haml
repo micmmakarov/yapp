@@ -1,4 +1,5 @@
-%ul.browse
-  -categories.each do |c|
-    %li
-      =link_to c.title, c.url
+-cache('categories') do
+  %ul.browse
+    -categories.each do |c|
+      %li
+        =link_to c.title, c.url

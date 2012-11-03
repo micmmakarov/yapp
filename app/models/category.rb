@@ -5,6 +5,7 @@ class Category < ActiveRecord::Base
   has_many :categoryables, :through => :category_relations
   before_save :generate_slug
 
+
   def the_videos
     category_relations.where(:categoryable_type => "Video").map {|c| c.categoryable}
   end
@@ -29,5 +30,8 @@ class Category < ActiveRecord::Base
     "/c/" + self.slug.to_s
   end
 
+  def popular
+
+  end
 
 end

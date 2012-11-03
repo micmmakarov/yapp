@@ -12,14 +12,14 @@
     %hr
     .row
       .eight.columns
-        =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Popular Interviews"}
+        =render :partial => "videos/videos", :locals => {:videos => popular, :caption => "Популярные интервью"}
         %hr
-        =render :partial => "videos/videos", :locals => {:videos => random, :caption => "Recommended Playlists"}
+        =render :partial => "videos/videos", :locals => {:videos => random, :caption => "Последние интервью"}
       .two.columns
-        %h1 Categories
-        =render "categories/list"
+        %h1 Категории
+        =render "categories/top_list"
       .two.columns
-        %h1 Our Partners
+        %h1 Партнёры
         =render "shared/partners"
 
 

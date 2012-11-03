@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :admin?, :popular, :authenticate_admin!, :categories, :random
+  helper_method :admin?, :popular, :authenticate_admin!, :categories, :random, :top_categories
   contenteditable_filter "user_signed_in?"
 
   def admin?
@@ -25,7 +25,11 @@ class ApplicationController < ActionController::Base
   end
 
   def categories
-    Category.all
+    Category.order("category_relations_count DESC")
+  end
+
+  def top_categories
+    Category.order("category_relations_count DESC").limit(10)
   end
 
 end
