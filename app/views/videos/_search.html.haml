@@ -2,7 +2,7 @@
   -videos.each do |v|
     .a_video
       .video-wrap
-        =link_to v, :class => 'video-image' do
+        =link_to v.url, :class => 'video-image' do
           -if v.img?
             =image_tag v.img_url(:small)
           -else

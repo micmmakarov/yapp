@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def popular
-    Video.all(:limit => 3)
+    Video.order("featured DESC").limit(3)
   end
 
   def random
