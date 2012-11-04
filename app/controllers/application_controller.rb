@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def categories
-    Category.order("category_relations_count DESC")
+    Category.order("category_relations_count DESC").select { |c| c.category_relations.count > 0 }
   end
 
   def top_categories

@@ -1,35 +1,42 @@
 
-.middle.top_padding.main-page.videos_page
-  .internal_content
-    %h2
-      =link_to 'Logout', destroy_user_session_path, :method => :delete
-    %h1 Listing videos
-
-    - @videos.each do |video|
-      .panel
-        .row
-          .three.columns
-            .title
-              %h2=link_to video.title, video
-            .image
-              =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/default.jpg"), video
-          .three.columns
-            .action.top_padding
-              =link_to 'Show', video, :class => 'long_button'
-            .info.top_padding
-              Info:
-              = video.youtube
-            = link_to 'Edit', edit_video_path(video)
-            = link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete
-          .six.columns
-            .image
-              =image_tag video.img_url(:small) if video.img?
-        .description
-          %h4=video.description
-        .categories
-          =render :partial => "categories/choose", :locals => {:object => video}
+.middle.top_padding.main-page
 
 
-    = link_to 'Add New Video', new_video_path, :class => 'long_button'
+  -if admin?
+    .internal_content.videos_page
+      %h1 Все видео
+      %h2
+        =link_to 'Logout', destroy_user_session_path, :method => :delete
+
+      - @videos.each do |video|
+        .panel
+          .row
+            .three.columns
+              .title
+                %h2=link_to video.title, video
+              .image
+                =link_to image_tag("http://img.youtube.com/vi/#{video.youtube}/default.jpg"), video
+            .three.columns
+              .action.top_padding
+                =link_to 'Show', video, :class => 'long_button'
+              .info.top_padding
+                Info:
+                = video.youtube
+              = link_to 'Edit', edit_video_path(video)
+              = link_to 'Destroy', video, :confirm => 'Are you sure?', :method => :delete
+            .six.columns
+              .image
+                =image_tag video.img_url(:small) if video.img?
+          .description
+            %h4=video.description
+          .categories
+            =render :partial => "categories/choose", :locals => {:object => video}
+      = link_to 'Add New Video', new_video_path, :class => 'long_button'
+  -else
+    .the_content
+      %h1 Все видео
+      =render :partial => "videos/search", :locals => {:videos => @videos}
+
+
 
 

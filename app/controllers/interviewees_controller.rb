@@ -1,6 +1,8 @@
 class IntervieweesController < ApplicationController
   # GET /interviewees
   # GET /interviewees.json
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   def index
     @interviewees = Interviewee.all
 

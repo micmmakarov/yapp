@@ -1,6 +1,8 @@
 class ContributorsController < ApplicationController
   # GET /contributors
   # GET /contributors.json
+  before_filter :authenticate_user!, :except => [:index, :show]
+
   def index
     @contributors = Contributor.all
 
