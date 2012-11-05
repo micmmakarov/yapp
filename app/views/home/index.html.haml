@@ -1,12 +1,12 @@
 .middle.top_padding.main-page
   .main-image-wrap
-    %a.play{:href => "#"}
-    =image_tag('img.jpg', :class => "main-image")
+    %a.play{:href => front.url}
+    =image_tag(front.img_url(:big), :class => "main-image")
     .sign
       %h1.highlighted
-        Interview with a smart guy
+        =front.title
       %h3.white
-        This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video. This is the description of a video.
+        =front.description
 
   .the_content
     %hr
