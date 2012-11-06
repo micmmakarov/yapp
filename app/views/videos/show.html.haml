@@ -4,11 +4,23 @@
       -#.progress-bar
         .the-progress
       -#.layer
-      #video{'data-video' => @video.youtube}
-        -if request.env['HTTP_USER_AGENT'].downcase.match(/android|iphone|ipad|macintosh/)
+      #video1{'data-video' => @video.youtube}
+        -if request.env['HTTP_USER_AGENT'].downcase.match(/android|iphone|ipad/)
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/#{@video.youtube}", :width => "560"}
-          %p
-            Для полной функциональности, смотрите полную версию СтартапСтори с компьютера
+          :css
+            .right_panel {
+              display:none !important;
+            }
+            .middle, .footer2 {
+              //width: 70% !important;
+              width: 100% !important;
+            }
+            body .no_flash_message {
+              display:block;
+            }
+
+    .alert-box.success.no_flash_message
+      Для полной функциональности, смотрите полную версию СтартапСтори с компьютера
     -if admin?
       Current time:
       %span.current_time

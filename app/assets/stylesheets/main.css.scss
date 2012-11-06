@@ -91,8 +91,13 @@ h6 {
   .header {
     display:none;
   }
+  .right_panel {
+    //display:none !important;
+  }
   .middle, .footer2 {
     width: 70% !important;
+    //width: 100% !important;
+
   }
 }
 
@@ -185,4 +190,8 @@ h6 {
   &:page-break-after {
     clear:both;
   }
+}
+
+body .no_flash_message {
+  display:none;
 }
