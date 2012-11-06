@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  attr_accessible :interviewee_id, :title, :youtube, :description, :img, :img_cache
+  attr_accessible :interviewee_id, :title, :youtube, :description, :img, :img_cache, :slug
   mount_uploader :img, ImgUploader
 
   has_many :blocks
