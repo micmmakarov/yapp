@@ -4,16 +4,17 @@
       -#.progress-bar
         .the-progress
       -#.layer
-      #video1{'data-video' => @video.youtube}
+      #video{'data-video' => @video.youtube}
         -if request.env['HTTP_USER_AGENT'].downcase.match(/android|iphone|ipad/)
           %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/#{@video.youtube}", :width => "560"}
           :css
             .right_panel {
               display:none !important;
             }
-            .middle, .footer2 {
+            html body .middle, html body .video_page .footer2 {
               //width: 70% !important;
               width: 100% !important;
+              max-width:10000px;
             }
             body .no_flash_message {
               display:block;
