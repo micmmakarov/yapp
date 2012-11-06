@@ -5,6 +5,10 @@
         .the-progress
       -#.layer
       #video{'data-video' => @video.youtube}
+        -if request.env['HTTP_USER_AGENT'].downcase.match(/android|iphone|ipad|macintosh/)
+          %iframe{:allowfullscreen => "", :frameborder => "0", :height => "315", :src => "http://www.youtube.com/embed/#{@video.youtube}", :width => "560"}
+          %p
+            Для полной функциональности, смотрите полную версию СтартапСтори с компьютера
     -if admin?
       Current time:
       %span.current_time
