@@ -9,6 +9,7 @@
       =render "social_media/metadata"
     = stylesheet_link_tag    "application", :media => "all"
     %script{:src => "http://www.google.com/jsapi", :type => "text/javascript"}
+    =render "social_media/google_analytics"
     = javascript_include_tag "application"
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
     = csrf_meta_tags
