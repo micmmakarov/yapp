@@ -33,7 +33,7 @@
         %p
           = @video.description
       .four.columns
-        =render "social_media/like_buttons"
+        =render :partial => "social_media/like_buttons", :locals => {:url => "http://startupstory.ru#{@video.url}"}
     .row
       .eight.columns
         %h1 Leave your comment
@@ -63,3 +63,13 @@
   = link_to 'Edit', edit_video_path(@video)
   \|
   = link_to 'Back', videos_path
+
+-provide :meta do
+  %meta{:content => "StartupStory.Ru - #{@video.title}", :property => "og:title"}/
+  %meta{:content => "website", :property => "og:type"}/
+  %meta{:content => "http://startupstory.ru#{@video.url}/", :property => "og:url"}/
+  %meta{:content => "http://img.youtube.com/vi/#{@video.youtube}/mqdefault.jpg", :property => "og:image"}/
+  %meta{:content => "StartupStory.Ru", :property => "og:site_name"}/
+  %meta{:content => "100000245725293", :property => "fb:admins"}/
+  %meta{:content => "286819084665868", :property => "fb:app_id"}/
+  %meta{:content => "Видеоинтервью с CEO стартапов из Кремниевой долины - #{@video.description}", :property => "og:description"}/
