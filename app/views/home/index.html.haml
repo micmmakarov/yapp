@@ -1,11 +1,11 @@
-.middle.top_padding.main-page
+.middle.top_padding.main-page.home
   .main-image-wrap
     %a.play{:href => front.url}
     =image_tag(front.img_url(:big), :class => "main-image")
     .sign
       %h1.highlighted
         =front.title
-      %h3.white
+      %h3.white.hide-for-small
         =front.description
 
   .the_content
