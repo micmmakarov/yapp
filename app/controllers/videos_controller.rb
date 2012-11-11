@@ -29,7 +29,7 @@ class VideosController < ApplicationController
   end
 
   def index
-    @videos = admin? ? Video.all : Video.where(:published => true)
+    @videos = admin? ? Video.all : Video.where(:published => true).order("featured DESC")
 
     respond_to do |format|
       format.html # index.html.haml
