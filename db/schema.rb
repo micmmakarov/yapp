@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121103230449) do
+ActiveRecord::Schema.define(:version => 20121104172244) do
 
   create_table "blocks", :force => true do |t|
     t.integer  "start_time"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20121103230449) do
     t.string   "img"
     t.string   "slug"
     t.integer  "featured"
+    t.boolean  "published"
   end
 
 end

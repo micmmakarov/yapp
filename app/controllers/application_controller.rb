@@ -26,7 +26,8 @@ class ApplicationController < ActionController::Base
 
 
   def random
-    Video.all(:order => 'random()', :limit =>3)
+    Video.where(:published => true).all(:order => 'random()', :limit =>3)
+
   end
 
   def categories

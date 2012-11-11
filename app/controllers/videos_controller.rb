@@ -29,7 +29,7 @@ class VideosController < ApplicationController
   end
 
   def index
-    @videos = Video.all
+    @videos = admin? ? Video.all : Video.where(:published => true)
 
     respond_to do |format|
       format.html # index.html.haml

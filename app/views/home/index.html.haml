@@ -16,7 +16,8 @@
         %hr
         =render :partial => "videos/videos", :locals => {:videos => random, :caption => "Последние интервью"}
         .all_videos
-          =link_to "Все видео", videos_url, :class => "all_videos_link"
+          =link_to  videos_url, :class => "all_videos_link" do
+            %h2 Все видео
       .two.columns
         %h1 Категории
         =render "categories/top_list"
