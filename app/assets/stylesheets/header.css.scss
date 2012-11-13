@@ -38,7 +38,11 @@
   .browse {
     max-height: 300px;
     overflow-y: hidden;
-
+    a {
+      &:hover {
+        background: url(arrow.png) no-repeat 90% center;
+      }
+    }
     &:hover {
       overflow-y: scroll;
     }

@@ -137,3 +137,14 @@
 
   }
 }
+
+.block_link {
+  &:hover {
+    background:rgba(255,255,255,0.6);
+  }
+}
+div.active_block {
+  &:hover {
+    background:#2E988C;
+  }
+}

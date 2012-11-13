@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def front
-    Video.order("featured DESC").first
+      Video.order("featured DESC").first
   end
 
 
